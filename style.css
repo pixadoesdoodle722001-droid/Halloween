@@ -1,34 +1,34 @@
 /* General Styles */
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #f9f9f9;
-    color: #333;
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }
 
 /* Nav Bar */
 nav {
+    background-color: #333;
+    color: white;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
 }
 
 nav .logo h1 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 30px;
 }
 
 nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    list-style: none;
 }
 
 nav ul li {
@@ -41,68 +41,37 @@ nav ul li a {
     font-size: 18px;
 }
 
-nav ul li a:hover {
-    color: #ff6f61;
-}
-
 /* Hero Section */
 .hero {
-    background-image: url('1.jpg'); /* This will apply the image located in the "img" folder */
-    background-size: cover;
-    background-position: center;
-    height: 400px;
+    background: url('1.jpg') no-repeat center center/cover;
+    height: 500px;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
-    position: relative;
+    padding: 20px;
 }
 
-.hero::before {
-    content: '';
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay to enhance text visibility */
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.hero .hero-content h2 {
+    font-size: 48px;
 }
 
-.hero .hero-content {
-    z-index: 1;
-}
-
-.hero h2 {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.cta-button {
+.hero .cta-button {
     padding: 10px 20px;
-    background-color: #ff6f61;
+    background-color: #ff6600;
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
+    margin-top: 20px;
     border-radius: 5px;
 }
 
-.cta-button:hover {
-    background-color: #e25c4e;
-}
-
-
 /* Menu Section */
 .menu {
-    padding: 40px;
+    padding: 40px 20px;
+    background-color: #f4f4f4;
     text-align: center;
-    background-color: #d2a765;
 }
 
 .menu h2 {
@@ -111,113 +80,63 @@ nav ul li a:hover {
 }
 
 .menu-items {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-.food-item {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .food-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
+    height: auto;
+    max-width: 250px;
+    border-radius: 10px;
 }
 
-.food-item h3 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.food-item p {
-    font-size: 16px;
-    color: #666;
-}
-
-.price {
+.food-item .price {
     font-size: 20px;
-    font-weight: bold;
+    color: #333;
     margin-top: 10px;
-    color: #ff6f61;
 }
 
 .learn-more {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 20px;
-    background-color: #ff6f61;
+    background-color: #ff6600;
     color: white;
     text-decoration: none;
     border-radius: 5px;
 }
 
-.learn-more:hover {
-    background-color: #e25c4e;
-}
-
-
 /* Portrait Section */
 .portraits {
-    padding: 40px;
+    padding: 40px 20px;
     text-align: center;
-    position: relative;
-    overflow: hidden; /* To prevent any content overflow */
-}
-
-.portraits::before {
-    content: '';
-    background-image: url('6.jpg');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.5; 
-    z-index: -1; 
 }
 
 .portraits h2 {
     font-size: 36px;
-    font-weight: 1000;
     margin-bottom: 20px;
-}
-
-.portraits p {
-    font-size: 18px;
-    color: #000000;
-    font-weight: 600;
-    margin-bottom: 30px;
 }
 
 .portrait-gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
 }
 
 .portrait-gallery img {
-    width: 250px;  /* Ensures equal size for both images */
+    width: 250px;
     height: 250px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
 }
-
 
 /* About Section */
 .about {
-    padding: 40px;
+    padding: 40px 20px;
     background-color: #fff;
-    text-align: justify;
+    text-align: center;
 }
 
 .about h2 {
@@ -225,26 +144,15 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.about p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
 .event-details {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-top: 20px;
-}
-
-.event-info {
-    width: 50%; /* Ensure text and images don't overlap */
 }
 
 .event-info p {
     font-size: 16px;
-    margin-bottom: 10px;
+    color: #333;
 }
 
 .event-info strong {
@@ -253,16 +161,27 @@ nav ul li a:hover {
 
 .event-images {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
+    gap: 20px;
 }
 
 .event-images img {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
 }
 
 /* Gallery Section */
@@ -297,7 +216,7 @@ nav ul li a:hover {
 }
 
 .gallery-item img:hover {
-    transform: scale(1.1); /* Slight zoom effect on hover */
+    transform: scale(1.1); 
 }
 
 .description {
@@ -306,7 +225,7 @@ nav ul li a:hover {
     color: #555;
 }
 
-/* Modal for Full Image View */
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -314,7 +233,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    background-color: rgba(0, 0, 0, 0.8); 
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -336,22 +255,92 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Nav Bar */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-/* Footer Section */
-footer {
-    padding: 20px;
-    background-color: #333;
-    color: white;
-    text-align: center;
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 400px;
+        background-size: cover;
+    }
+
+    .hero .hero-content h2 {
+        font-size: 36px;
+    }
+
+    /* Menu Section */
+    .menu-items {
+        grid-template-columns: 1fr; 
+    }
+
+    /* Portrait Section */
+    .portrait-gallery {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* About Section */
+    .event-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-info p {
+        font-size: 14px;
+    }
+
+    .event-images {
+        justify-content: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item img {
+        max-width: 200px;
+    }
+
+    .description {
+        font-size: 12px;
+    }
 }
 
-footer a {
-    color: #ff6f61;
-    text-decoration: none;
-}
+@media (max-width: 480px) {
+    /* Menu Section */
+    .food-item img {
+        max-width: 200px;
+    }
 
-footer a:hover {
-    color: #e25c4e;
-}
+    /* Portrait Section */
+    .portrait-gallery img {
+        width: 100%;
+        height: auto;
+    }
 
+    .gallery-grid {
+        grid-template-columns: 1fr; 
+
+    .gallery-item img {
+        max-width: 100%; 
+    }
+
+    .description {
+        font-size: 12px; 
+    }
+}
+}
