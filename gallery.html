@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portrait Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <!-- Nav Bar -->
+    <nav>
+        <div class="logo">
+            <h1>Pixels</h1>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#portraits">Portraits</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Portrait Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Image 001 to 005 -->
+            <div class="gallery-item">
+                <img src="img/g1.jpg" alt="Portrait 001" onclick="openModal(this)">
+                <p class="description">001</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g2.jpg" alt="Portrait 002" onclick="openModal(this)">
+                <p class="description">002</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g3.jpg" alt="Portrait 003" onclick="openModal(this)">
+                <p class="description">003</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g4.jpg" alt="Portrait 004" onclick="openModal(this)">
+                <p class="description">004</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g5.jpg" alt="Portrait 005" onclick="openModal(this)">
+                <p class="description">005</p>
+            </div>
+
+            <!-- Image 006 to 007 -->
+            <div class="gallery-item">
+                <img src="img/4.jpg" alt="Portrait 006" onclick="openModal(this)">
+                <p class="description">006</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/5.jpg" alt="Portrait 007" onclick="openModal(this)">
+                <p class="description">007</p>
+            </div>
+
+            <!-- Image 008 to 015 (Using g6.jpg for all) -->
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 008" onclick="openModal(this)">
+                <p class="description">008</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 009" onclick="openModal(this)">
+                <p class="description">009</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 010" onclick="openModal(this)">
+                <p class="description">010</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 011" onclick="openModal(this)">
+                <p class="description">011</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 012" onclick="openModal(this)">
+                <p class="description">012</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 013" onclick="openModal(this)">
+                <p class="description">013</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 014" onclick="openModal(this)">
+                <p class="description">014</p>
+            </div>
+            <div class="gallery-item">
+                <img src="img/g6.jpg" alt="Portrait 015" onclick="openModal(this)">
+                <p class="description">015</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Full Image View -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">X</span>
+        <img id="modal-img" src="" alt="Full-size image">
+    </div>
+
+    <script>
+        // Open modal with full-size image
+        function openModal(image) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-img");
+            modal.style.display = "block";
+            modalImg.src = image.src;
+        }
+
+        // Close modal
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
