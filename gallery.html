@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixels_Halloween</title>
+    <title>Portrait Gallery</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Nav Bar -->
-        <nav>
+<nav>
     <div class="logo">
         <h1>Pixels</h1>
     </div>
@@ -27,87 +26,99 @@
     </ul>
 </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h2>Spooky Treats, Sweet Portraits</h2>
-            <p>Join us at Graveyard Bites for a fun, eerie Halloween experience!</p>
-            <a href="#menu" class="cta-button">Check Out Our Menu</a>
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <h2>Portrait Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Image 001 to 005 -->
+            <div class="gallery-item">
+                <img src="g1.jpg" alt="Portrait 001" onclick="openModal(this)">
+                <p class="description">001: The Summer Hikaru Died</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g2.jpg" alt="Portrait 002" onclick="openModal(this)">
+                <p class="description">002: Gachiakuta</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g3.jpg" alt="Portrait 003" onclick="openModal(this)">
+                <p class="description">003: Kamen Rider Zeztz</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g4.jpg" alt="Portrait 004" onclick="openModal(this)">
+                <p class="description">004: The Fragrant Flower Bloomed with Dignity</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g5.jpg" alt="Portrait 005" onclick="openModal(this)">
+                <p class="description">005: To Be Hero X</p>
+            </div>
+
+            <!-- Image 006 to 007 -->
+            <div class="gallery-item">
+                <img src="4.jpg" alt="Portrait 006" onclick="openModal(this)">
+                <p class="description">006: Jujutsu Kaisen</p>
+            </div>
+            <div class="gallery-item">
+                <img src="5.jpg" alt="Portrait 007" onclick="openModal(this)">
+                <p class="description">007: Mojuro</p>
+            </div>
+
+            <!-- Image 008 to 015 -->
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 008" onclick="openModal(this)">
+                <p class="description">008: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 009" onclick="openModal(this)">
+                <p class="description">009: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 010" onclick="openModal(this)">
+                <p class="description">010: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 011" onclick="openModal(this)">
+                <p class="description">011: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 012" onclick="openModal(this)">
+                <p class="description">012: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 013" onclick="openModal(this)">
+                <p class="description">013: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 014" onclick="openModal(this)">
+                <p class="description">014: ???</p>
+            </div>
+            <div class="gallery-item">
+                <img src="g6.jpg" alt="Portrait 015" onclick="openModal(this)">
+                <p class="description">015: ???</p>
+            </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
-<section id="menu" class="menu">
-    <h2>Our Halloween Menu</h2>
-    <div class="menu-items">
-        <div class="food-item">
-            <img src="2.jpg" alt="Graveyard Brownies">
-            <h3>Graveyard Brownies</h3>
-            <p>Fudgy brownies topped with cookie ‘tombstones’.</p>
-            <p class="price">40 THB</p>
-            <a href="menu1.html" class="learn-more">Learn More</a>
-        </div>
-        <div class="food-item">
-            <img src="3.webp" alt="Bloody Strawberries">
-            <h3>Bloody Strawberries</h3>
-            <p>Fresh strawberries dipped in white/dark chocolate.</p>
-            <p class="price">25 THB</p>
-            <a href="menu2.html" class="learn-more">Learn More</a>
-        </div>
+    <!-- Modal for Full Image View -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">X</span>
+        <img id="modal-img" src="" alt="Full-size image">
     </div>
-</section>
 
-    <!-- Portrait Section -->
-<section id="portraits" class="portraits">
-    <h2>Get Your Custom Halloween Portrait</h2>
-    <p>Buy 1 food_Get 1 Ticket for Lucky Draw! Plus, 3 lucky customers will get a chance to be drawn own portrait by the artist!</p>
-    <div class="portrait-gallery">
-        <a href="gallery.html">
-            <img src="4.jpg" alt="Example Portrait 1">
-        </a>
-        <a href="gallery.html">
-            <img src="5.jpg" alt="Example Portrait 2">
-        </a>
-    </div>
-</section>
+    <script>
+        // Open modal with full-size image
+        function openModal(image) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modal-img");
+            modal.style.display = "block";
+            modalImg.src = image.src;
+        }
 
-
-<!-- About Section -->
-<section id="about" class="about">
-    <h2>About Graveyard Bites</h2>
-    <p>Graveyard Bites is your go-to Halloween treat booth, blending spooky fun with sweet, delicious treats. We bring you a creative experience with treats like our Graveyard Brownies and Bloody Strawberries, all served with a side of **custom portraits** by Pixa.</p>
-
-    <!-- Event Details -->
-    <div class="event-details">
-        <div class="event-info">
-            <p><strong>Date:</strong> 31st October 2025</p>
-            <p><strong>Location:</strong> Bangkok University</p>
-            <p><strong>Venue:</strong> To Be Confirmed</p>
-            <p><strong>Time:</strong> To Be Confirmed</p>
-        </div>
-        <div class="event-images">
-            <img src="7.jpg" alt="Event Image 1">
-            <img src="8.jpg" alt="Event Image 2">
-        </div>
-    </div>
-</section>
-
-
-    <!-- Footer Section -->
-    <footer id="contact">
-        <p>&copy; 2025 Group Pixels | All Rights Reserved</p>
-        <p>Follow us on: <a href="https://www.instagram.com/gachii.pixa?igsh=djRsN3lxc2NrZHhj">Instagram</a></p>
-    </footer>
+        // Close modal
+        function closeModal() {
+            var modal = document.getElementById("modal");
+            modal.style.display = "none";
+        }
+    </script>
 
 </body>
-
-<script>
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
-
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
-</script>
-
 </html>
