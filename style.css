@@ -47,7 +47,7 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-    background-image: url('img/1.jpg'); /* This will apply the image located in the "img" folder */
+    background-image: url('1.jpg'); /* This will apply the image located in the "img" folder */
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -173,7 +173,7 @@ nav ul li a:hover {
 
 .portraits::before {
     content: '';
-    background-image: url('img/6.jpg');
+    background-image: url('6.jpg');
     background-size: cover;
     background-position: center;
     position: absolute;
@@ -354,3 +354,4 @@ footer a {
 footer a:hover {
     color: #e25c4e;
 }
+
