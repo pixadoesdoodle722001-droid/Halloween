@@ -18,6 +18,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 nav .logo h1 {
@@ -41,9 +42,23 @@ nav ul li a {
     font-size: 18px;
 }
 
+/* Hamburger Menu (Hidden by default) */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.navbar-toggle div {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    margin: 4px 0;
+}
+
 /* Hero Section */
 .hero {
-    background: url('1.jpg') no-repeat center center/cover;
+    background: url('img/1.jpg') no-repeat center center/cover;
     height: 500px;
     color: white;
     display: flex;
@@ -55,6 +70,7 @@ nav ul li a {
 
 .hero .hero-content h2 {
     font-size: 48px;
+    margin-bottom: 15px;
 }
 
 .hero .cta-button {
@@ -184,92 +200,31 @@ footer a {
     text-decoration: none;
 }
 
-/* Gallery Section */
-.gallery {
-    padding: 40px;
-    text-align: center;
-}
-
-.gallery h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
-    gap: 20px;
-    justify-items: center;
-}
-
-.gallery-item {
-    text-align: center;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    max-width: 250px;
-    cursor: pointer;
-    transition: transform 0.3s;
-    border-radius: 8px;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.1); 
-}
-
-.description {
-    font-size: 14px;
-    margin-top: 10px;
-    color: #555;
-}
-
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); 
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
-    /* Nav Bar */
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Nav Bar - Hamburger Menu */
+    nav ul {
+        display: none;
     }
 
-    nav ul {
+    .navbar-toggle {
+        display: flex;
+    }
+
+    nav.active ul {
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333;
+        padding: 10px;
+        border-radius: 5px;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 
     /* Hero Section */
@@ -284,7 +239,7 @@ footer a {
 
     /* Menu Section */
     .menu-items {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr; /* 1 image per row on small screens */
     }
 
     /* Portrait Section */
@@ -306,18 +261,6 @@ footer a {
     .event-images {
         justify-content: center;
     }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .gallery-item img {
-        max-width: 200px;
-    }
-
-    .description {
-        font-size: 12px;
-    }
 }
 
 @media (max-width: 480px) {
@@ -331,16 +274,4 @@ footer a {
         width: 100%;
         height: auto;
     }
-
-    .gallery-grid {
-        grid-template-columns: 1fr; 
-
-    .gallery-item img {
-        max-width: 100%; 
-    }
-
-    .description {
-        font-size: 12px; 
-    }
-}
 }
