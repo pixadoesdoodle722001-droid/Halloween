@@ -19,6 +19,7 @@ nav {
     padding: 20px;
     background-color: #333;
     color: white;
+    position: relative;
 }
 
 nav .logo h1 {
@@ -26,6 +27,7 @@ nav .logo h1 {
     font-weight: bold;
 }
 
+/* Menu Links */
 nav ul {
     display: flex;
     list-style: none;
@@ -49,6 +51,7 @@ nav ul li a:hover {
 .menu-toggle {
     display: none;
     cursor: pointer;
+    z-index: 10;
 }
 
 .menu-toggle .bar {
@@ -57,6 +60,7 @@ nav ul li a:hover {
     background-color: white;
     margin: 6px 0;
 }
+
 
 /* Hero Section */
 .hero {
@@ -256,7 +260,6 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
-/* About Section */
 .about {
     padding: 40px;
     background-color: #fff;
@@ -300,16 +303,17 @@ nav ul li a:hover {
     gap: 15px;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Allow images to wrap on small screens */
+    flex-wrap: wrap; 
     width: 50%;
 }
 
 .event-images img {
     width: 100%;
-    max-width: 200px; /* Limit size for better control */
-    height: auto;
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 8px;
 }
+
 
 /* Gallery Section */
 .gallery {
@@ -400,30 +404,27 @@ footer a:hover {
 }
 
 @media (max-width: 768px) {
-    nav ul {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background-color: #333;
-    padding: 20px;
-    width: 200px;
-    border-radius: 8px;
+nav ul {
+        display: none; /* Hide the menu by default */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #333;
+        padding: 20px;
+        width: 200px;
+        border-radius: 8px;
+        gap: 10px;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    nav ul.show {
+        display: flex;
     }
 
     .menu-toggle {
         display: block; 
     }
 
-    nav ul.show {
-    display: flex;
-    }
-    
     .menu-items {
         flex-direction: column;
         gap: 10px;
@@ -443,16 +444,17 @@ footer a:hover {
     }
 
     .event-info {
-        width: 100%; 
+        width: 100%;
     }
 
     .event-images {
         width: 100%; 
-        justify-content: space-around;
+        justify-content: space-around; 
     }
 
     .event-images img {
-        max-width: 150px; 
+        max-width: 100%; 
+        height: 200px;
     }
 
     .portrait-gallery {
