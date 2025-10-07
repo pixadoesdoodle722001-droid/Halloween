@@ -9,7 +9,7 @@
 <body>
 
     <!-- Nav Bar -->
-        <nav>
+<nav>
     <div class="logo">
         <h1>Pixels</h1>
     </div>
@@ -26,6 +26,7 @@
         <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
+
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -99,15 +100,17 @@
         <p>Follow us on: <a href="https://www.instagram.com/gachii.pixa?igsh=djRsN3lxc2NrZHhj">Instagram</a></p>
     </footer>
 
+<script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+
 </body>
 
-<script>
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
 
-menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-});
-</script>
 
 </html>
